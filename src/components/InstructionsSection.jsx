@@ -33,7 +33,7 @@ export default function InstructionsSection() {
                 </h3>
               </div>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed flex-1">
-                Texto de ejemplo o breve explicación. Puedes reemplazarlo con tus instrucciones.
+                Texto de ejemplo o breve explicación.
               </p>
             </article>
           ))}
