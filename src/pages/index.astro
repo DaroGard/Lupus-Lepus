@@ -1,20 +1,12 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.jsx";
-import SimulationSection from "../components/SimulationSection.jsx";
 import InstructionsSection from "../components/InstructionsSection.jsx";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Lupus - Lepus</title>
-  </head>
-  <body>
-    <main class="min-h-screen">
-      <Hero client:load />
-      <SimulationSection client:load />
-      <InstructionsSection client:load />
-    </main>
-  </body>
-</html>
+<Layout>
+  <main class="min-h-screen">
+    <Hero client:load />
+    <InstructionsSection client:load />
+  </main>
+</Layout>
