@@ -3,10 +3,12 @@ import { PlayIcon, PauseIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import { defaultState, setup as engineSetup, tick as engineTick } from "../utils/simulationEngine";
 import { createScaler } from "../utils/renderCanvas";
 import PopulationChart from "./PopulationChart";
+import StatsCounters from "./StatsCounters";
 
 const SimulationSection = forwardRef(({ settingsFromPanel }, ref) => {
   const [state, setState] = useState(() =>
-    settingsFromPanel ? engineSetup(defaultState(settingsFromPanel), settingsFromPanel)
+    settingsFromPanel
+      ? engineSetup(defaultState(settingsFromPanel), settingsFromPanel)
       : engineSetup(defaultState(), {})
   );
   const [running, setRunning] = useState(false);
@@ -113,8 +115,11 @@ const SimulationSection = forwardRef(({ settingsFromPanel }, ref) => {
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 w-full md:w-1/2 flex flex-col h-[500px] md:h-[550px]">
             <h3 className="font-semibold text-gray-800 text-center mb-4 text-xl">Gráfico de Poblaciones</h3>
-            <div className="flex-1">
-              <PopulationChart history={state.history} />
+            <div className="flex flex-col gap-3 h-full">
+              <StatsCounters history={state.history} />
+              <div className="flex-1 mt-2">
+                <PopulationChart history={state.history} />
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 {
   "name": "lupus-lepus",
   "type": "module",
-  "version": "0.5.0",
+  "version": "0.9.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -21,5 +21,8 @@
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.17",
     "vite": "^7.2.2"
+  },
+  "engines": {
+    "node": "^20.19.5"
   }
 }
